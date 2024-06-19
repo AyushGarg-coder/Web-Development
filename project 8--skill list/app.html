@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill list</title>
+    <style>
+        .item {
+            position: relative;
+            overflow: hidden;
+            color: black;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 8px;
+            right: 5px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-2 text-center">
+        <h1 class="alert alert-primary mb-2">SKILL LIST</h1>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Enter the skill" id="inputskill">
+            <button class="btn btn-primary" onclick="add_item()">Add Item</button>
+        </div>
+        <div class="row" id="itemcontainer"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        function add_item() {
+            const container = document.getElementById('itemcontainer');
+            let skillitem = document.getElementById('inputskill');
+            let skill = skillitem.value.trim();
+
+            if (skill === '') {
+                alert('Input Field Must contain Some value');
+                return;
+            }
+
+            const itemcol = document.createElement('div');
+            itemcol.classList.add('col-6', 'col-md-4', 'col-lg-3', 'mb3');
+            const item = document.createElement('div');
+            item.classList.add('item', 'p-3', 'bg-light', 'border', 'rounded');
+            item.textContent = skill;
+
+            delete_btn = document.createElement('button');
+            delete_btn.classList.add('delete-btn', 'btn', 'btn-danger');
+            delete_btn.innerHTML = "<span aria-hidden='true'>&times;</span>"
+            delete_btn.onclick = function () {
+                container.removeChild(itemcol)
+            }
+
+            item.appendChild(delete_btn);
+            itemcol.appendChild(item);
+            container.appendChild(itemcol);
+            document.getElementById('inputskill').value = "";
+        }
+    </script>
+</body>
+
+</html>
