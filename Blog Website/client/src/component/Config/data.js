@@ -1,0 +1,22 @@
+export const categories = [
+    { id: 1, type: 'Music' },
+    { id: 2, type: 'Movies' },
+    { id: 3, type: 'Sports' },
+    { id: 4, type: 'Cars' },
+    { id: 5, type: 'Travel' },
+    { id: 6, type: 'Technologies' },
+    { id: 7, type: 'Books' },
+    { id: 8, type: 'Food' },
+    { id: 9, type: 'Fashion' },
+    { id: 10, type: 'Health' },
+    { id: 11, type: 'Fitness' },
+    { id: 12, type: 'Home Decor' },
+    { id: 13, type: 'Gaming' },
+    { id: 14, type: 'Education' },
+    { id: 15, type: 'Art' },
+    { id: 16, type: 'Photography' },
+    { id: 17, type: 'Science' },
+    { id: 18, type: 'History' },
+    { id: 19, type: 'Nature' },
+    { id: 20, type: 'Pets' }
+];
